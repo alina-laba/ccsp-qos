@@ -1,0 +1,8 @@
+[Unit]
+Description=CcspQoS service
+[Service]
+Type=simple
+ExecStart=/usr/bin/ccsp_qos -subsys eRT.
+ExecStop=/bin/sh -c ' echo "Ccsp QoS service stopped" '
+[Install]
+WantedBy=multi-user.target
