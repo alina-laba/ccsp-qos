@@ -25,30 +25,46 @@
 * Add new class and set parameters example:
 
   > dmcli eRT addtable Device.QoS.Classification.
+
   > dmcli eRT setv Device.QoS.Classification.1.TrafficClass int 10
+
   > dmcli eRT setv Device.QoS.Classification.1.ChainName string "OUTPUT"
+
   > dmcli eRT setv Device.QoS.Classification.1.IfaceOut string "erouter0"
+
   > dmcli eRT setv Device.QoS.Classification.1.SourcePort int 40000
+
   > dmcli eRT setv Device.QoS.Classification.1.SourcePortRangeMax int 40016
+
   > dmcli eRT setv Device.QoS.Classification.1.DestPort int -1
+
   > dmcli eRT setv Device.QoS.Classification.1.DestPortRangeMax int -1
+
   > dmcli eRT setv Device.QoS.Classification.1.Protocol int 17
+
   > dmcli eRT setv Device.QoS.Classification.1.DSCPMark int 46
+
   > dmcli eRT setv Device.QoS.Classification.1.Enable bool true
 
 * Add new queue and set parameters example:
 
   > dmcli eRT addtable Device.QoS.Queue.
   > dmcli eRT setv Device.QoS.Queue.1.Interface string "erouter0"
+
   > dmcli eRT setv Device.QoS.Queue.1.SchedulerAlgorithm string "SP"
+
   > dmcli eRT setv Device.QoS.Queue.1.Precedence uint 5
+
   > dmcli eRT setv Device.QoS.Queue.1.TrafficClasses string "10"
+
   > dmcli eRT setv Device.QoS.Queue.1.ShapingRate int -1
+
   > dmcli eRT setv Device.QoS.Queue.1.Enable bool true
 
 * Delete existing nodes example:
 
   > dmcli eRT deltable Device.QoS.Queue.N.
+
   > dmcli eRT deltable Device.QoS.Classification.N.
 
     where N is the instance number of the corresponding node 
@@ -144,61 +160,113 @@
 -----------------------------------------------------------------
 
 dmcli eRT addtable Device.QoS.Queue.
+
 dmcli eRT setv Device.QoS.Queue.1.Interface string "erouter0"
+
 dmcli eRT setv Device.QoS.Queue.1.SchedulerAlgorithm int 0
+
 dmcli eRT setv Device.QoS.Queue.1.Precedence uint 8
+
 dmcli eRT setv Device.QoS.Queue.1.TrafficClasses string "40,"
+
 dmcli eRT setv Device.QoS.Queue.1.ShapingRate int -1
+
 dmcli eRT setv Device.QoS.Queue.1.Enable bool true
 
+
 dmcli eRT addtable Device.QoS.Classification.
+
 dmcli eRT setv Device.QoS.Classification.1.Order uint 1
+
 dmcli eRT setv Device.QoS.Classification.1.TrafficClass int 40
+
 dmcli eRT setv Device.QoS.Classification.1.ChainName string "OUTPUT"
+
 dmcli eRT setv Device.QoS.Classification.1.IfaceOut string "erouter0"
+
 dmcli eRT setv Device.QoS.Classification.1.SourcePort int -1
+
 dmcli eRT setv Device.QoS.Classification.1.SourcePortRangeMax int -1
+
 dmcli eRT setv Device.QoS.Classification.1.DestPort int -1
+
 dmcli eRT setv Device.QoS.Classification.1.DestPortRangeMax int -1
+
 dmcli eRT setv Device.QoS.Classification.1.DSCPMark int 10
+
 dmcli eRT setv Device.QoS.Classification.1.Enable bool true
 
 
+
 dmcli eRT addtable Device.QoS.Queue.
+
 dmcli eRT setv Device.QoS.Queue.2.Interface string "erouter0"
+
 dmcli eRT setv Device.QoS.Queue.2.SchedulerAlgorithm int 0
+
 dmcli eRT setv Device.QoS.Queue.2.Precedence uint 2
+
 dmcli eRT setv Device.QoS.Queue.2.TrafficClasses string "30,"
+
 dmcli eRT setv Device.QoS.Queue.2.ShapingRate int -1
+
 dmcli eRT setv Device.QoS.Queue.2.Enable bool true
 
-dmcli eRT addtable Device.QoS.Classification.
-dmcli eRT setv Device.QoS.Classification.2.Order uint 11
-dmcli eRT setv Device.QoS.Classification.2.TrafficClass int 30
-dmcli eRT setv Device.QoS.Classification.2.ChainName string "POSTROUTING"
-dmcli eRT setv Device.QoS.Classification.2.IfaceOut string "erouter0"
-dmcli eRT setv Device.QoS.Classification.2.SourcePort int -1
-dmcli eRT setv Device.QoS.Classification.2.SourcePortRangeMax int -1
-dmcli eRT setv Device.QoS.Classification.2.DestPort int -1
-dmcli eRT setv Device.QoS.Classification.2.DestPortRangeMax int -1
-dmcli eRT setv Device.QoS.Classification.2.Protocol int 17
-dmcli eRT setv Device.QoS.Classification.2.DSCPMark int 10
-dmcli eRT setv Device.QoS.Classification.2.DestIP string "74.125.250.0"
-dmcli eRT setv Device.QoS.Classification.2.DestMask string "24"
-dmcli eRT setv Device.QoS.Classification.2.Enable bool true
 
 dmcli eRT addtable Device.QoS.Classification.
+
+dmcli eRT setv Device.QoS.Classification.2.Order uint 11
+
+dmcli eRT setv Device.QoS.Classification.2.TrafficClass int 30
+
+dmcli eRT setv Device.QoS.Classification.2.ChainName string "POSTROUTING"
+
+dmcli eRT setv Device.QoS.Classification.2.IfaceOut string "erouter0"
+
+dmcli eRT setv Device.QoS.Classification.2.SourcePort int -1
+
+dmcli eRT setv Device.QoS.Classification.2.SourcePortRangeMax int -1
+
+dmcli eRT setv Device.QoS.Classification.2.DestPort int -1
+
+dmcli eRT setv Device.QoS.Classification.2.DestPortRangeMax int -1
+
+dmcli eRT setv Device.QoS.Classification.2.Protocol int 17
+
+dmcli eRT setv Device.QoS.Classification.2.DSCPMark int 10
+
+dmcli eRT setv Device.QoS.Classification.2.DestIP string "74.125.250.0"
+
+dmcli eRT setv Device.QoS.Classification.2.DestMask string "24"
+
+dmcli eRT setv Device.QoS.Classification.2.Enable bool true
+
+
+dmcli eRT addtable Device.QoS.Classification.
+
 dmcli eRT setv Device.QoS.Classification.3.Order uint 12
+
 dmcli eRT setv Device.QoS.Classification.3.TrafficClass int 30
+
 dmcli eRT setv Device.QoS.Classification.3.ChainName string "POSTROUTING"
+
 dmcli eRT setv Device.QoS.Classification.3.IfaceOut string "erouter0"
+
 dmcli eRT setv Device.QoS.Classification.3.SourcePort int -1
+
 dmcli eRT setv Device.QoS.Classification.3.SourcePortRangeMax int -1
+
 dmcli eRT setv Device.QoS.Classification.3.DestPort int -1
+
 dmcli eRT setv Device.QoS.Classification.3.DestPortRangeMax int -1
+
 dmcli eRT setv Device.QoS.Classification.3.Protocol int 17
+
 dmcli eRT setv Device.QoS.Classification.3.DSCPMark int 10
+
 dmcli eRT setv Device.QoS.Classification.3.DestIP string "142.250.82.0"
+
 dmcli eRT setv Device.QoS.Classification.3.DestMask string "24"
+
 dmcli eRT setv Device.QoS.Classification.3.Enable bool true
 
